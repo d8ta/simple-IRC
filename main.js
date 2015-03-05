@@ -12,6 +12,14 @@ client.addListener('error', function(message) {
     console.log('error: ', message);
 });
 
+// Namelist
+client.addListener('names', function (channel, names) {
+    var chatter = Object.keys(names);
+    console.log(chatter);
+    $('#names').append('<p> chatter' + chatter + '</p>');
+
+});
+
 function say() {
     var speak = document.getElementById("text").value;
     $('#chatwindow').append('<p> me =>' + speak + '</p>');
