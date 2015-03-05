@@ -20,4 +20,9 @@ function say() {
     client.say('#schnitzelwirt', speak);
 }
 
+function disco() {
+    client.part('#schnitzelwirt');
 
+}function connect() {
+    client.join('#schnitzelwirt nodewebkit');
+}
