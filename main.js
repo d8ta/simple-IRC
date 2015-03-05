@@ -1,6 +1,3 @@
-/**
- * Created by danielraudschus on 05.03.15.
- */
 var irc = require('irc');
 var client = new irc.Client('chat.freenode.org', 'D8ta', {
     channels: ['#schnitzelwirt']
@@ -8,10 +5,15 @@ var client = new irc.Client('chat.freenode.org', 'D8ta', {
 
 client.addListener('message', function (from, to, message) {
     console.log(from + ' => ' + to + ': ' + message);
+    $('#chatwindow').append('<p>' + from + ' => ' + to + ': ' + message);
 });
 
 client.addListener('error', function(message) {
     console.log('error: ', message);
+});
+
+client.addListener('message#schnitzelwirt', function (from, message) {
+    console.log(from + ' => #schnitzelwirt: ' + message);
 });
 
 function say() {
