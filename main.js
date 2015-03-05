@@ -12,14 +12,9 @@ client.addListener('error', function(message) {
     console.log('error: ', message);
 });
 
-client.addListener('message#schnitzelwirt', function (from, message) {
-    console.log(from + ' => #schnitzelwirt: ' + message);
-});
-
-
 function say() {
     var speak = document.getElementById("text").value;
-    document.getElementById("text").innerHTML = speak;
+    $('#chatwindow').append('<p> me =>' + speak + '</p>');
     client.say('#schnitzelwirt', speak);
 }
 
