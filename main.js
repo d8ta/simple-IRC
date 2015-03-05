@@ -10,7 +10,14 @@ client.addListener('message', function (from, to, message) {
     console.log(from + ' => ' + to + ': ' + message);
 });
 
+client.addListener('error', function(message) {
+    console.log('error: ', message);
+});
 
 function say() {
-    client.say('#schnitzelwirt', ";-)");
+    var speak = document.getElementById("text").value;
+    document.getElementById("text").innerHTML = speak;
+    client.say('#schnitzelwirt', speak);
 }
+
+
