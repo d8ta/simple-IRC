@@ -5,7 +5,7 @@ var client = new irc.Client('chat.freenode.org', 'D8ta', {
 
 client.addListener('message', function (from, to, message) {
     console.log(from + ' => ' + to + ': ' + message);
-    $('#chatwindow').append('<p>' + from + ' => ' + to + ': ' + message);
+    $('#chatwindow').append('<p>' + from + ' => ' + to + ': ' + message + '</p>');
 });
 
 client.addListener('error', function(message) {
@@ -15,6 +15,7 @@ client.addListener('error', function(message) {
 client.addListener('message#schnitzelwirt', function (from, message) {
     console.log(from + ' => #schnitzelwirt: ' + message);
 });
+
 
 function say() {
     var speak = document.getElementById("text").value;
